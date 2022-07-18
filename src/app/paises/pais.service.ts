@@ -16,4 +16,9 @@ export class PaisService {
     const url = `${this.apiUrl}/name/${termino}`;
     return this.http.get<Countries[]>(url);
   }
+
+  detallePais(termino:string):Observable<Countries[]>{
+    const url = `${this.apiUrl}/alpha/${termino}`;
+    return this.http.get<Countries[]>(url);
+  }
 }

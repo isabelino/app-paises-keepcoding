@@ -40,7 +40,7 @@
           <td>{{item.region}}</td>
           <td>{{item.population | number }}</td>
           <td>
-            <a href="#">Ver...</a>
+            <a [routerLink]="['/pais',item.cca2]">Ver...</a>
           </td>
         </tr>
       </tbody>
