@@ -14,7 +14,7 @@
 </div>
 <hr>
 
-<div class="alert alert-danger">
+<div *ngIf="existeError === true" class="alert alert-danger">
   No se encontro nada en la busqueda ingresada
 </div>
 <div class="row">
@@ -24,17 +24,21 @@
         <tr>
           <th>#</th>
           <th>Bandera</th>
-          <th>Nombre</th>
+          <th>Pais</th>
+          <th>Capital</th>
+          <th>Region</th>
           <th>Poblacion</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>bandera</td>
-          <td>nombre</td>
-          <td>12000000</td>
+        <tr *ngFor="let item of paises;let i = index">
+          <td>{{i+1}}</td>
+          <td><img style="width: 50px;" [src]="item.flags.png" alt=""></td>
+          <td>{{item.name.common}}</td>
+          <td>{{item.capital}}</td>
+          <td>{{item.region}}</td>
+          <td>{{item.population | number }}</td>
           <td>
             <a href="#">Ver...</a>
           </td>
